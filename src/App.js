@@ -4,6 +4,7 @@ import AddTask from './Pages/AddTask';
 import Calender from './Pages/Calender';
 import CompleteTask from './Pages/CompleteTask';
 import Home from './Pages/Home';
+import Footer from './sheared/Footer';
 import Navbar from './sheared/Navbar/Navbar';
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
         <Route path='/complete' element={<CompleteTask/> }/>
       </Routes>
     
-   
+   <Footer/>
     </div>
   );
 }
