@@ -14,7 +14,8 @@ const fromSubmit=(e)=>{
     // console.log(task)
     setTask(task)
     setNvi(!nvi)
-    const url='http://localhost:5000/task'
+    const url='https://secret-inlet-08431.herokuapp.com/task'
+    // const url='http://localhost:5000/task'
     fetch(url, {
         method: 'POST', 
         headers: {

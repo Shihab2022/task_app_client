@@ -7,8 +7,8 @@ const AddTask = ({task}) => {
     const [check,setCheck]=useState(true)
     const [newData,setNewData]=useState('')
     const { isLoading, error, data} = useQuery('tasks', () =>
-    fetch('http://localhost:5000/task').then(res =>
-    // fetch('https://secret-inlet-08431.herokuapp.com/task').then(res =>
+    // fetch('http://localhost:5000/task').then(res =>
+    fetch('https://secret-inlet-08431.herokuapp.com/task').then(res =>
       res.json()
     )
   )
@@ -17,7 +17,8 @@ const AddTask = ({task}) => {
   }
 //   update
 const updateInfo=(id)=>{
-    const url=`http://localhost:5000/task/${id}`
+    const url=`https://secret-inlet-08431.herokuapp.com/task/${id}`
+    // const url=`http://localhost:5000/task/${id}`
     fetch(url, {
         method: 'put',
         headers: {
@@ -37,7 +38,8 @@ const updateInfo=(id)=>{
 console.log(newData)
 //   delete
   const deleteOne=(id)=>{
-    const url = `http://localhost:5000/task/${id}`;
+    const url = `https://secret-inlet-08431.herokuapp.com/task/${id}`;
+    // const url = `http://localhost:5000/task/${id}`;
     fetch(url, {
       method: "DELETE",
     })
