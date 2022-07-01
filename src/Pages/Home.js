@@ -3,33 +3,10 @@ import { useNavigate,Link } from "react-router-dom";
 import {  useQuery } from 'react-query'
 import AddTask from './AddTask';
 
-
 const Home = () => {
     let navigate = useNavigate();
     const [task,setTask]=useState('')
-    const [nvi,setNvi]=useState(false)
-// useEffect(()=>{
-
-
-//     fetch('http://localhost:5000/addTask', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-           
-//           },
-//           body: JSON.stringify(task)
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-       
-// console.log(data)
-//     })
-
-// },[task])
-
-//   if (isLoading) return 'Loading...'
-
-//   if (error) return 'An error has occurred: ' + error.message
+    const [nvi,setNvi]=useState(false)     
 
 const fromSubmit=(e)=>{
     const task =e.target.task.value
@@ -37,21 +14,20 @@ const fromSubmit=(e)=>{
     // console.log(task)
     setTask(task)
     setNvi(!nvi)
-//     fetch('http://localhost:5000/add', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-           
-//           },
-//           body: JSON.stringify(task)
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-       
-// console.log(data)
-//     })
+    const url='http://localhost:5000/task'
+    fetch(url, {
+        method: 'POST', 
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(task),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
     
-    navigate("/addTask")
+    // navigate("/addTask")
     e.preventDefault(); 
 
 }
