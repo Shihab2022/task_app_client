@@ -8,6 +8,7 @@ import Footer from './sheared/Footer';
 import Navbar from './sheared/Navbar/Navbar';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import EditTask from './Pages/EditTask';
 function App() {
   return (
     <div >
@@ -18,6 +19,7 @@ function App() {
         <Route path='/addTask' element={<AddTask/>}/>
         <Route path='/calender' element={<Calender/>}/>
         <Route path='/complete' element={<CompleteTask/> }/>
+        <Route path='/addTask/:editId' element={<EditTask/>}/>
       </Routes>
       <ToastContainer />
    <Footer/>
